@@ -14,8 +14,6 @@
  * https://posturinn.is/einstaklingar/ymsar-upplysingar/postnumer-og-thjonustustig/
  *
  * Last updated on: 2023-04-26
- *
- * @type {Record<string | number, { name: string; name_dative: string }>}
  */
 exports.postnumer = {
   '101': {
