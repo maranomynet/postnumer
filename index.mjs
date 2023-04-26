@@ -43,7 +43,9 @@
       return Place;
     };
 
+    // Beware: these hashed class-names are not stable...
     const cardSelector = '.src__Box-sc-1sbtrzs-0.hMtKsT';
+
     Object.fromEntries(
       Array.from(document.querySelectorAll(cardSelector))
         .map((elm) => {
