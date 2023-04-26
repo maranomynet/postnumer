@@ -1,5 +1,3 @@
-// @ts-check
-
 /*
   WARNING: All of this is super dumb, but works.
 

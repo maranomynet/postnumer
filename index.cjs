@@ -1,5 +1,3 @@
-// @ts-check
-
 /*
   See step-by-step directions in `./index.mjs` on how to update this data.
 */
