@@ -2,6 +2,10 @@
 
 ## Upcoming
 
+## 1.1.0
+
+_2023-05-19_
+
 - feat: Add `thjodskraPlaces` lookup table for Þjóðskrá's magic codes for
   localities, counties, countries and continents
 - docs: Add JSDoc for the `postnumer` object
