@@ -2,17 +2,6 @@
   See step-by-step directions in `./postnumer.mjs` on how to update this data.
 */
 
-// ===========================================================================
-
-/**
- * Lookup table for the place names (localities) of every known post-code
- * ("póstnúmer") in Iceland.
- *
- * Based on information found on the page:
- * https://posturinn.is/einstaklingar/ymsar-upplysingar/postnumer-og-thjonustustig/
- *
- * Last updated on: 2023-04-26
- */
 exports.postnumer = {
   '101': {
     name: 'Reykjavík',
