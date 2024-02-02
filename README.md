@@ -57,5 +57,5 @@ See
 
 ## Other Iceland-Themed Libraries
 
-- [`is-kennitala`](https://npmjs.com/packages/is-kennitala) - Best-of-breed kennitala (Icelandic national ID) validation and utility library.
-- [`fridagar`][https://npmjs.com/packages/fridagar] - Icelandic public holidays and other commonly observed 'special' days.
+- [`is-kennitala`](https://npmjs.com/package/is-kennitala) - Best-of-breed kennitala (Icelandic national ID) validation and utility library.
+- [`fridagar`](https://npmjs.com/package/fridagar) - Icelandic public holidays and other commonly observed 'special' days.
