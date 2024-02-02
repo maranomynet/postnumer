@@ -3,11 +3,18 @@
 Icelandic post-codes (Póstnúmer) and locality names as a JavaScript object.
 Also includes the dative form ("þágufall") of the locality name.
 
-The data exported by this module is manually updated. Find detailed step-by-step
-directions at the top of [index.mjs](./index.mjs). Pull requests welcome.
+This module also contains a lookup table for Þjóðskrá's (Iceland's National
+Registry) "magic codes" for localities, counties, countries and continents.
 
-This module also contains a lookup table for Þjóðskrá's magic codes for
-localities, counties, countries and continents 
+<!-- prettier-ignore-start -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Changelog](#changelog)
+- [Other Iceland-Themed Libraries](#other-iceland-themed-libraries)
+
+<!-- prettier-ignore-end -->
 
 ## Installation
 
@@ -33,6 +40,20 @@ locality.name_dative; // 'Kópavogi'
 const place1 = thjodskraPlaces['3606'] // 'Borgarnes'
 const place2 = thjodskraPlaces['XT']; // 'Afríka, ótilgreint land'
 ```
+
+## Contributing
+
+Because the (shameful) lack of public APIs, the data exported by this module
+has to be manually updated. Find detailed step-by-step directions at the top
+of [postnumer.mjs](./postnumer.mjs) and [places.mjs](./places.mjs).
+
+Pull requests welcome, and please open an issue if you have ideas for new
+features or improvements.
+
+## Changelog
+
+See
+[CHANGELOG.md](https://github.com/maranomynet/postnumer/blob/dev/CHANGELOG.md)
 
 ## Other Iceland-Themed Libraries
 

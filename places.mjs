@@ -1,6 +1,21 @@
 // @ts-check
 /*
-  See info about updating this in `./index.d.ts`
+  HOWTO update thid data object:
+
+  1. Go to https://www.skra.is/um-okkur/utgafur-og-skjol/taknmal-thjodskrar/
+
+  2. Manually select and copy each relevant table data
+
+  3. Paste the data into a text editor and add colons, quotes and commas
+
+  4. Make sure there are no leading or trailing spaces in the name values
+
+  5. Paste it into this file and save
+
+  6. ALSO paste it into `./places.cjs`
+
+  7. Open `./index.d.ts` and update its JSDoc comment 'last updated' date
+     and the web.archive.org link below it.
 */
 
 export const thjodskraPlaces = {

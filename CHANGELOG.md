@@ -1,6 +1,7 @@
 # Change Log for `postnumer`
 
 ## Upcoming
+- docs: Improve/correct README
 
 - ... <!-- Add new lines here. -->
 

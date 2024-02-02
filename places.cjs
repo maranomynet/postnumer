@@ -1,6 +1,6 @@
 // @ts-check
 /*
-  See info about updating this in `./index.d.ts`
+  See `./places.mjs` for info about updating this data.
 */
 
 exports.thjodskraPlaces = {

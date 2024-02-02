@@ -73,6 +73,7 @@
      b. ALSO paste the object into `./postnumer.cjs` as `exports.postnumer`.
 
      c. Open `./index.d.ts` and update its JSDoc comment `last updated` date.
+
 */
 
 // ===========================================================================
