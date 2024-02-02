@@ -3,6 +3,11 @@
 ## Upcoming
 
 - ... <!-- Add new lines here. -->
+
+## 1.1.0
+
+_2023-05-19_
+
 - fix: Update post codes and place-names with latest data
 
 ## 1.1.0
