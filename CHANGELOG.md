@@ -4,11 +4,12 @@
 
 - ... <!-- Add new lines here. -->
 
-## 1.1.1
+## 1.1.1 – 1.1.2
 
 _2024-02-02_
 
 - fix: Update post codes and place-names with latest data
+- fix: Remove trailing/leading spaces from locality names
 
 ## 1.1.0
 
