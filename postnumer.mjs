@@ -63,8 +63,8 @@
     ```
 
   6. If the above code throws an error, try to figure out what went wrong
-    and update the code to fix the problem. (Pósturinn might have re-wamped
-    their websote once again, so this may happen frequently.)
+    and update these directions with your solution. (Pósturinn might have 
+    re-wamped their website once again, so this may happen frequently.)
 
   7. Right-click the logged object in the console, select "Copy Object" and...
 
