@@ -1,16 +1,16 @@
 # Change Log for `postnumer`
 
 ## Upcoming
-- docs: Improve/correct README
 
 - ... <!-- Add new lines here. -->
 
-## 1.1.1 – 1.1.2
+## 1.1.1 – 1.1.3
 
 _2024-02-02_
 
 - fix: Update post codes and place-names with latest data
 - fix: Remove trailing/leading spaces from locality names
+- docs: Improve/correct README
 
 ## 1.1.0
 
