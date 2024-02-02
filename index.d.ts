@@ -5,7 +5,7 @@
  * Based on information found on the page:
  * https://posturinn.is/einstaklingar/ymsar-upplysingar/postnumer-og-thjonustustig/
  *
- * Last updated on: 2023-04-26
+ * Last updated on: 2024-02-02
  */
 export declare const postnumer: Record<string | number, { name: string; name_dative: string }>
 
@@ -16,7 +16,7 @@ export declare const postnumer: Record<string | number, { name: string; name_dat
  * Based on data from
  * https://www.skra.is/um-okkur/utgafur-og-skjol/taknmal-thjodskrar/
  *
- * Last updated: 2021-05-19
- * ([Snapshot](https://web.archive.org/web/20230514134137/https://www.skra.is/um-okkur/utgafur-og-skjol/taknmal-thjodskrar/))
+ * Last updated: 2024-02-02
+ * ([Snapshot](https://web.archive.org/web/20231221085312/https://www.skra.is/um-okkur/utgafur-og-skjol/taknmal-thjodskrar/))
 */
 export declare const thjodskraPlaces: Record<string, string>
