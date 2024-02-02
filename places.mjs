@@ -57,7 +57,7 @@ export const thjodskraPlaces = {
   7505: "Fljótsdalshreppur",
   8000: "Vestmannaeyjabær",
   8200: "Sveitarfélagið Árborg",
-  8401: "Sveitarfélagið Hornafjörður ",
+  8401: "Sveitarfélagið Hornafjörður",
   8508: "Mýrdalshreppur",
   8509: "Skaftárhreppur",
   8610: "Ásahreppur",
