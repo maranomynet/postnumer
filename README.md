@@ -34,3 +34,7 @@ const place1 = thjodskraPlaces['3606'] // 'Borgarnes'
 const place2 = thjodskraPlaces['XT']; // 'Afríka, ótilgreint land'
 ```
 
+## Other Iceland-Themed Libraries
+
+- [`is-kennitala`](https://npmjs.com/packages/is-kennitala) - Best-of-breed kennitala (Icelandic national ID) validation and utility library.
+- [`fridagar`][https://npmjs.com/packages/fridagar] - Icelandic public holidays and other commonly observed 'special' days.
