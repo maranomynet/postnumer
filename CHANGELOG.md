@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.1.5
+
+_2024-02-18_
+
 - fix: Add missing `thjodskraPlaces` magic code `9000` ("Utan umdæma")
 - build: Perform data updates programmatically
 
