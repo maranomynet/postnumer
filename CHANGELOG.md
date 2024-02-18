@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.2.0
+
+_2024-02-18_
+
 - feat: Add `postalCodes`, an array of post code info objects.
 - feat: Add `postalCodeMap` export, deprecating `postnumer`.
 
