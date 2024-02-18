@@ -16,7 +16,7 @@ bun add postnumer
 
 - [Postal Codes](#postal-codes)
   - [`postalCodes`](#postalcodes)
-  - [`postalCodesArr`](#postalcodesarr)
+  - [`postalCodeMap`](#postalcodemap)
 - [National Registry Place Codes](#national-registry-place-codes)
   - [`thjodskraPlaces`](#thjodskraplaces)
 - [Contributing](#contributing)
@@ -46,35 +46,38 @@ console.log(postnumerMeta.lastUpdated);
 
 ### `postalCodes`
 
+**Type**: `Array<{ postcode: number, name: string, name_dative: string }>`
+
+An array containing every post-code ("póstnúmer") in Iceland, along with its
+corresponding place name.
+
+Ideal for generating drop-downs, auto-completes, etc.
+
+```ts
+import { postalCodes } from 'postnumer';
+
+const lastItem = postalCodes[postalCodesArr.length - 1];
+lastItem.postcode; // 902
+lastItem.name; // 'Vestmannaeyjar'
+lastItem.name_dative; // 'Vestmannaeyjum'
+```
+
+---
+
+### `postalCodeMap`
+
 **Type**: `Record<number, { name: string, name_dative: string }>`
 
 Lookup table for the place names (localities) of every known post-code
 ("póstnúmer") in Iceland.
 
 ```ts
-import { postalCodes } from 'postnumer';
+import { postalCodeMap } from 'postnumer';
 
-const locality = postalCodes[200];
-locality.name; // 'Kópavogur'
-locality.name_dative; // 'Kópavogi'
-```
-
----
-
-### `postalCodesArr`
-
-**Type**: `Array<{ code: number, name: string, name_dative: string }>`
-
-An array containing every post-code ("póstnúmer") in Iceland, along with its
-corresponding place name.
-
-```ts
-import { postalCodesArr } from 'postnumer';
-
-const lastLocality = postalCodesArr[postalCodesArr.length - 1];
-lastLocality.code; // 902
-lastLocality.name; // 'Vestmannaeyjar'
-lastLocality.name_dative; // 'Vestmannaeyjum'
+const info = postalCodeMap[200];
+info.postcode; // 200
+info.name; // 'Kópavogur'
+info.name_dative; // 'Kópavogi'
 ```
 
 ---

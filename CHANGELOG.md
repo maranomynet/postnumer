@@ -3,6 +3,8 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- feat: Add `postalCodes`, an array of post code info objects.
+- feat: Add `postalCodeMap` export, deprecating `postnumer`.
 
 ## 1.1.5
 
