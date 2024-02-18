@@ -12,6 +12,8 @@ yarn add postnumer
 bun add postnumer
 ```
 
+**Contents:**
+
 <!-- prettier-ignore-start -->
 
 - [Postal Codes](#postal-codes)
