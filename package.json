@@ -3,17 +3,53 @@
   "version": "1.1.4",
   "description": "Icelandic post-codes (Póstnúmer) and locality names as a JavaScript object.",
   "repository": "https://github.com/maranomynet/postnumer",
-  "author": "Már Örlygsson <mar.nospam@anomy.net>",
-  "license": "MIT",
-  "private": false,
-  "main": "index.cjs",
-  "module": "index.mjs",
-  "types": "index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.cjs",
-      "types": "./index.d.ts"
+  "contributors": [
+    "Már Örlygsson <mar.nospam@anomy.net>"
+  ],
+  "license": "ISC",
+  "npmPackageJson": {
+    "type": null,
+    "private": null,
+    "scripts": null,
+    "devDependencies": null,
+    "engines": null,
+    "hxmstyle": null,
+    "sideEffects": false,
+    "exports": {
+      ".": {
+        "import": "./esm/index.js",
+        "require": "./index.js"
+      }
+    }
+  },
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun scripts/dev.ts",
+    "build": "bun scripts/build.ts",
+    "fetch-data": "bun scripts/fetch-data.ts",
+    "publish:lib": "bun scripts/publish.ts",
+    "prepublishOnly": "echo \"\nRun 'bun run publish:lib' to publish this package\n\n\"  &&  exit 1"
+  },
+  "devDependencies": {
+    "@hugsmidjan/hxmstyle": "^8.5.0",
+    "@maranomynet/libtools": "^0.1.8",
+    "@types/bun": "^1.0.5",
+    "eslint": "^8.56.0",
+    "linkedom": "^0.16.8",
+    "prettier": "^2.8.8",
+    "typescript": "^5.3.3",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "bun": "1.0.27",
+    "node": "9999. Please use bun",
+    "npm": "9999. Please use bun",
+    "yarn": "9999. Please use bun"
+  },
+  "hxmstyle": {
+    "options": {
+      "typescript": true
     }
   }
 }

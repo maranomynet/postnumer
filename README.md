@@ -6,40 +6,109 @@ Also includes the dative form ("þágufall") of the locality name.
 This module also contains a lookup table for Þjóðskrá's (Iceland's National
 Registry) "magic codes" for localities, counties, countries and continents.
 
+```sh
+npm install postnumer
+yarn add postnumer
+bun add postnumer
+```
+
 <!-- prettier-ignore-start -->
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [Postal Codes](#postal-codes)
+  - [`postalCodes`](#postalcodes)
+  - [`postalCodesArr`](#postalcodesarr)
+- [National Registry Place Codes](#national-registry-place-codes)
+  - [`thjodskraPlaces`](#thjodskraplaces)
 - [Contributing](#contributing)
 - [Changelog](#changelog)
 - [Other Iceland-Themed Libraries](#other-iceland-themed-libraries)
 
 <!-- prettier-ignore-end -->
 
-## Installation
+---
 
-```sh
-yarn add postnumer
+## Postal Codes
+
+The postal code information isf fetched from an official data-source linked to
+from this page: <https://www.byggdastofnun.is/is/postthjonusta/postnumer>
+
+See `postnumerMeta` for information on when your version of the data was last
+updated.
+
+```ts
+import { postnumerMeta } from 'postnumer';
+
+console.log(postnumerMeta.lastUpdated);
+// "2024-02-18"
 ```
 
-…or…
+---
 
-```sh
-npm install postnumer
-```
+### `postalCodes`
 
-## Usage
+**Type**: `Record<number, { name: string, name_dative: string }>`
 
-```js
-import { postnumer, thjodskraPlaces } from 'postnumer';
+Lookup table for the place names (localities) of every known post-code
+("póstnúmer") in Iceland.
 
-const locality = postnumer[200];
+```ts
+import { postalCodes } from 'postnumer';
+
+const locality = postalCodes[200];
 locality.name; // 'Kópavogur'
 locality.name_dative; // 'Kópavogi'
+```
 
-const place1 = thjodskraPlaces['3606'] // 'Borgarnes'
+---
+
+### `postalCodesArr`
+
+**Type**: `Array<{ code: number, name: string, name_dative: string }>`
+
+An array containing every post-code ("póstnúmer") in Iceland, along with its
+corresponding place name.
+
+```ts
+import { postalCodesArr } from 'postnumer';
+
+const lastLocality = postalCodesArr[postalCodesArr.length - 1];
+lastLocality.code; // 902
+lastLocality.name; // 'Vestmannaeyjar'
+lastLocality.name_dative; // 'Vestmannaeyjum'
+```
+
+---
+
+## National Registry Place Codes
+
+Iceland's National Registry ("Þjóðskrá") uses a set of "magic codes" to refer
+to localities, counties, countries and continents.
+
+This information is sourced from Þjóðskrá's homepage:
+<https://www.skra.is/um-okkur/utgafur-og-skjol/taknmal-thjodskrar>
+
+---
+
+### `thjodskraPlaces`
+
+**Type**: `Record<string|number, string>`
+
+Lookup table for Þjóðskrá's place and couuntry code values for localities,
+counties, countries and continents.
+
+It's useful for translating Þjóðskrá's cryptic codes to human-readable names.
+
+```ts
+import { thjodskraPlaces } from 'postnumer';
+
+const place1 = thjodskraPlaces['3606']; // 'Borgarnes'
 const place2 = thjodskraPlaces['XT']; // 'Afríka, ótilgreint land'
 ```
+
+NOTE: Þjóðskrá also has similar magic codes for geners, marital status,
+religious affiliation, etc. This module considers those codes out of scope.
+
+---
 
 ## Contributing
 
@@ -50,12 +119,18 @@ of [postnumer.mjs](./postnumer.mjs) and [places.mjs](./places.mjs).
 Pull requests welcome, and please open an issue if you have ideas for new
 features or improvements.
 
+---
+
 ## Changelog
 
 See
 [CHANGELOG.md](https://github.com/maranomynet/postnumer/blob/dev/CHANGELOG.md)
 
+---
+
 ## Other Iceland-Themed Libraries
 
-- [`is-kennitala`](https://npmjs.com/package/is-kennitala) - Best-of-breed kennitala (Icelandic national ID) validation and utility library.
-- [`fridagar`](https://npmjs.com/package/fridagar) - Icelandic public holidays and other commonly observed 'special' days.
+- [`is-kennitala`](https://npmjs.com/package/is-kennitala) - Best-of-breed
+  kennitala (Icelandic national ID) validation and utility library.
+- [`fridagar`](https://npmjs.com/package/fridagar) - Icelandic public holidays
+  and other commonly observed 'special' days.

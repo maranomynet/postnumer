@@ -1,0 +1,14 @@
+# --------------------------------------------------------------------
+# deps and build/test results
+node_modules
+/.rpt2_cache
+/_npm-lib
+/test*.ts
+
+# --------------------------------------------------------------------
+# junk
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "DOM"],
+    "allowSyntheticDefaultImports": true,
+    "module": "NodeNext",
+    "target": "ES2017",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+
+    "strict": true, // Don't be daft. Always be strict.
+    "noUncheckedIndexedAccess": true, // Should be part of strict
+    "noImplicitAny": true,
+    "useUnknownInCatchVariables": true
+  },
+  "exclude": ["node_modules", "_npm-lib"]
+}

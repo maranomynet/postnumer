@@ -1,8 +1,10 @@
 # Change Log for `postnumer`
 
-## Upcoming
+## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- fix: Add missing `thjodskraPlaces` magic code `9000` ("Utan umdæma")
+- build: Perform data updates programmatically
 
 ## 1.1.1 – 1.1.4
 
