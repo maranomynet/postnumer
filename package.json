@@ -1,6 +1,6 @@
 {
   "name": "postnumer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Icelandic post-codes (Póstnúmer) and locality names as a JavaScript object.",
   "repository": "https://github.com/maranomynet/postnumer",
   "contributors": [

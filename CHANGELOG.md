@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.2.1
+
+_2024-03-13_
+
 - fix: Typo in `postnumerMeta.lastUpdated` property name
 - data: Verify postal codes and place names as still current
 
