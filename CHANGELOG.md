@@ -4,6 +4,7 @@
 
 - ... <!-- Add new lines here. -->
 - fix: Typo in `postnumerMeta.lastUpdated` property name
+- data: Verify postal codes and place names as still current
 
 ## 1.2.0
 
