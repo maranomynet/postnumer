@@ -91,7 +91,9 @@ await fetch(postnumerAPIUrl).then(async (response) => {
  * Metadata about the data in your installed version of the "postnumer" package
  */
 export const postnumerMeta = {
-  lastUpdtedOn: ${JSON.stringify(date)}
+  lastUpdated: ${JSON.stringify(date)},
+  /** @deprecated Typo, use \`.lastUpdated\` instead (Remove in v) */
+  lastUpdtedOn: ${JSON.stringify(date)},
 };
 
 export const _postalCodes = [

@@ -3,6 +3,7 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- fix: Typo in `postnumerMeta.lastUpdated` property name
 
 ## 1.2.0
 

@@ -39,12 +39,12 @@ describe('package', () => {
     expect(postnumer).toStrictEqual(postalCodeMap);
   });
 
-  test('`postnumerMeta` has lastUpdatedOn', () => {
-    expect(postnumerMeta.lastUpdtedOn).toBeString();
-    expect(postnumerMeta.lastUpdtedOn).toMatch(/^\d{4}-\d{2}-\d{2}$/);
-    const lastUpdatedOn = new Date(postnumerMeta.lastUpdtedOn);
-    expect(lastUpdatedOn).toBeValidDate();
-    expect(lastUpdatedOn.getTime()).toBeLessThan(Date.now());
+  test('`postnumerMeta` has lastUpdated', () => {
+    expect(postnumerMeta.lastUpdated).toBeString();
+    expect(postnumerMeta.lastUpdated).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    const lastUpdated = new Date(postnumerMeta.lastUpdated);
+    expect(lastUpdated).toBeValidDate();
+    expect(lastUpdated.getTime()).toBeLessThan(Date.now());
   });
 
   Object.entries({ postalCodeMap, postalCodes, thjodskraPlaces }).forEach(
