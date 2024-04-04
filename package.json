@@ -32,13 +32,13 @@
     "prepublishOnly": "echo \"\nRun 'bun run publish:lib' to publish this package\n\n\"  &&  exit 1"
   },
   "devDependencies": {
-    "@hugsmidjan/hxmstyle": "^8.5.0",
-    "@maranomynet/libtools": "^0.1.8",
-    "@types/bun": "^1.0.5",
+    "@hugsmidjan/hxmstyle": "^8.7.0",
+    "@maranomynet/libtools": "^0.1.10",
+    "@types/bun": "^1.0.12",
     "eslint": "^8.56.0",
-    "linkedom": "^0.16.8",
+    "linkedom": "^0.16.11",
     "prettier": "^2.8.8",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.3",
     "zod": "^3.22.4"
   },
   "engines": {
