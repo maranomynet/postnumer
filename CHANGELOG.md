@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.2.2
+
+_2024-04-04_
+
 - docs: Fix mistake in `@deprecated` message
 - data: Verify postal codes and place names as still current
 
