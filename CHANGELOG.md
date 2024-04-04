@@ -3,6 +3,7 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- docs: Fix mistake in `@deprecated` message
 
 ## 1.2.1
 

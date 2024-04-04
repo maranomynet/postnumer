@@ -93,7 +93,7 @@ await fetch(postnumerAPIUrl).then(async (response) => {
  */
 export const postnumerMeta = {
   lastUpdated: ${JSON.stringify(date)},
-  /** @deprecated Typo, use \`.lastUpdated\` instead (Remove in v) */
+  /** @deprecated Typo, use \`.lastUpdated\` instead (Will be removed in v2.0) */
   lastUpdtedOn: ${JSON.stringify(date)},
 };
 
