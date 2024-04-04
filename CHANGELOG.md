@@ -4,6 +4,7 @@
 
 - ... <!-- Add new lines here. -->
 - docs: Fix mistake in `@deprecated` message
+- data: Verify postal codes and place names as still current
 
 ## 1.2.1
 
