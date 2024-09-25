@@ -1,4 +1,4 @@
-# Icelandic Post-Codes ("Póstnúmer")
+# Icelandic Post-Codes ("Póstnúmer") <!-- omit from toc -->
 
 Icelandic post-codes (Póstnúmer) and locality names as a JavaScript object.
 Also includes the dative form ("þágufall") of the locality name.
