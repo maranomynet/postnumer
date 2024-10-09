@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import * as v from 'valibot';
 
 // NOTE: This Byggðastofnun data lacks "post box" codes, and has some errors (repeat values)
 // so we prefer the "posturinn" data source.
@@ -47,12 +47,15 @@ const dativize = (place: string): string => {
 
 // ---------------------------------------------------------------------------
 
-const postnumerAPIData_partial = z.object({
-  features: z.array(
-    z.object({
-      properties: z.object({
-        postnumer: z.number().min(100).max(999),
-        stadur: z.string().transform((name) => name.trim().replace(/\s\s+/g, ' ')),
+const postnumerAPIData_partial = v.object({
+  features: v.array(
+    v.object({
+      properties: v.object({
+        postnumer: v.pipe(v.number(), v.minValue(100), v.maxValue(999)),
+        stadur: v.pipe(
+          v.string(),
+          v.transform((name) => name.trim().replace(/\s\s+/g, ' '))
+        ),
       }),
     })
   ),
@@ -65,8 +68,8 @@ await fetch(postnumerAPIUrl).then(async (response) => {
   const data = await response.json();
   const postnumer = Object.values(
     Object.fromEntries(
-      postnumerAPIData_partial
-        .parse(data)
+      v
+        .parse(postnumerAPIData_partial, data)
         .features.map(({ properties }) => {
           const postnumer = properties.postnumer;
           const name = properties.stadur.split(',')[0]!.trim();

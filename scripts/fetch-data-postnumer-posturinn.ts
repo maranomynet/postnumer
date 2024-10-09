@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import * as v from 'valibot';
 
 // Source: https://posturinn.is/einstaklingar/ymsar-upplysingar/postnumer-og-thjonustustig
 // ...fetches its data from this API endpoint:
@@ -61,10 +61,13 @@ const dativize = (place: string): string => {
 
 // ---------------------------------------------------------------------------
 
-const postnumerAPIData_partial = z.array(
-  z.object({
-    postcode: z.number().min(100).max(999),
-    city: z.string().transform((name) => name.trim().replace(/\s\s+/g, ' ')),
+const postnumerAPIData_partial = v.array(
+  v.object({
+    postcode: v.pipe(v.number(), v.minValue(100), v.maxValue(999)),
+    city: v.pipe(
+      v.string(),
+      v.transform((name) => name.trim().replace(/\s\s+/g, ' '))
+    ),
   })
 );
 
@@ -73,8 +76,8 @@ await fetch(postnumerAPIUrl).then(async (response) => {
     throw new Error(`Failed to fetch postnumer data: ${response.statusText}`);
   }
   const data = await response.json();
-  const postnumer = postnumerAPIData_partial
-    .parse(data)
+  const postnumer = v
+    .parse(postnumerAPIData_partial, data)
     .map(({ postcode, city }) => {
       return {
         postnumer: postcode,
