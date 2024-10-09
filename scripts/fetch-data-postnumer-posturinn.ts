@@ -36,24 +36,26 @@ const postnumerAPIUrl = 'https://api.mobiz.posturinn.is/api/v1/locations/service
 /* prettier-ignore */
 // eslint-disable-next-line complexity
 const dativize = (place: string): string => {
-  if (place.endsWith('s')) { return `${place  }i`; }
-  if (place.endsWith('ar')) { return `${place.slice(0, -2)  }um`; }
-  if (place.includes('fjörður')) { return place.replace('fjörður', 'firði'); }
-  if (place.endsWith('ur')) {
-    if (place.endsWith('dalur') || place.endsWith('staður')) { return place.slice(0, -2); }
-    if (place.endsWith('völlur')) { return `${place.slice(0, -6)  }velli`; }
-    if (place.endsWith('klaustur')) { return `${place.slice(0, -2)  }ri`; }
-    if (place.endsWith('ivogur')) { return `${place.slice(0, -6)  }avogi`; }
+  const placeLC = place.toLowerCase();
+  if (placeLC === 'kjós') { return place; }
+  if (placeLC.endsWith('s')) { return `${place  }i`; }
+  if (placeLC.endsWith('ar')) { return `${place.slice(0, -2)  }um`; }
+  if (placeLC.includes('fjörður')) { return place.replace('fjörður', 'firði'); }
+  if (placeLC.endsWith('ur')) {
+    if (placeLC.endsWith('dalur') || place.endsWith('staður')) { return place.slice(0, -2); }
+    if (placeLC.endsWith('völlur')) { return `${place.slice(0, -6)  }velli`; }
+    if (placeLC.endsWith('klaustur')) { return `${place.slice(0, -2)  }ri`; }
+    if (placeLC.endsWith('ivogur')) { return `${place.slice(0, -6)  }avogi`; }
     return `${place.slice(0, -2)  }i`;
   }
-  if (place.endsWith('bær')) { return place.slice(0, -1); }
-  if (place.endsWith('a')) { return `${place.slice(0, -1)  }u`; }
-  if (place.endsWith('holt') || place.endsWith('vatn')) { return `${place  }i`; }
-  if (place.endsWith('hóll')) { return `${place.slice(0, -1)  }i`; }
-  if (place.endsWith('fljót')) { return `${place  }um`; }
-  if (place.endsWith('tangi') || place.endsWith('bakki')) { return `${place.slice(0, -1)  }a`; }
-  if (place.endsWith('staðir')) { return `${place.slice(0, -6)  }stöðum`; }
-  if (place.endsWith('öræfi')) { return 'Öræfum'; }
+  if (placeLC.endsWith('bær')) { return place.slice(0, -1); }
+  if (placeLC.endsWith('a')) { return `${place.slice(0, -1)  }u`; }
+  if (placeLC.endsWith('holt') || place.endsWith('vatn')) { return `${place  }i`; }
+  if (placeLC.endsWith('hóll')) { return `${place.slice(0, -1)  }i`; }
+  if (placeLC.endsWith('fljót')) { return `${place  }um`; }
+  if (placeLC.endsWith('tangi') || place.endsWith('bakki')) { return `${place.slice(0, -1)  }a`; }
+  if (placeLC.endsWith('staðir')) { return `${place.slice(0, -6)  }stöðum`; }
+  if (placeLC.endsWith('öræfi')) { return 'Öræfum'; }
   return place;
 };
 

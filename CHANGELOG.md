@@ -3,6 +3,7 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- fix: Correct the dative form for "Kjós", "Öræfi" and "Fljót"
 
 ## 1.2.3
 
