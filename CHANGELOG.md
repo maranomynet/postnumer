@@ -3,6 +3,7 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- fix: Update `postalCodes` and `postalCodeMap` place names
 
 ## 1.2.2
 

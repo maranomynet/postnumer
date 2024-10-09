@@ -4,9 +4,9 @@
  * Metadata about the data in your installed version of the "postnumer" package
  */
 export const postnumerMeta = {
-  lastUpdated: "2024-07-30",
+  lastUpdated: "2024-10-09",
   /** @deprecated Typo, use `.lastUpdated` instead (Will be removed in v2.0) */
-  lastUpdtedOn: "2024-07-30",
+  lastUpdtedOn: "2024-10-09",
 };
 
 export const _postalCodes = [
@@ -55,15 +55,15 @@ export const _postalCodes = [
   {"postnumer":235,"name":"Keflavíkurflugvöllur","name_dative":"Keflavíkurflugvelli"},
   {"postnumer":240,"name":"Grindavík","name_dative":"Grindavík"},
   {"postnumer":241,"name":"Grindavík","name_dative":"Grindavík"},
-  {"postnumer":245,"name":"Suðurnesjabær","name_dative":"Suðurnesjabæ"},
-  {"postnumer":246,"name":"Suðurnesjabær","name_dative":"Suðurnesjabæ"},
-  {"postnumer":250,"name":"Suðurnesjabær","name_dative":"Suðurnesjabæ"},
-  {"postnumer":251,"name":"Suðurnesjabær","name_dative":"Suðurnesjabæ"},
+  {"postnumer":245,"name":"Sandgerði","name_dative":"Sandgerði"},
+  {"postnumer":246,"name":"Sandgerði","name_dative":"Sandgerði"},
+  {"postnumer":250,"name":"Garður","name_dative":"Garði"},
+  {"postnumer":251,"name":"Garður","name_dative":"Garði"},
   {"postnumer":260,"name":"Reykjanesbær","name_dative":"Reykjanesbæ"},
   {"postnumer":262,"name":"Reykjanesbær","name_dative":"Reykjanesbæ"},
   {"postnumer":270,"name":"Mosfellsbær","name_dative":"Mosfellsbæ"},
   {"postnumer":271,"name":"Mosfellsbær","name_dative":"Mosfellsbæ"},
-  {"postnumer":276,"name":"Mosfellsbær","name_dative":"Mosfellsbæ"},
+  {"postnumer":276,"name":"Kjós","name_dative":"Kjósi"},
   {"postnumer":300,"name":"Akranes","name_dative":"Akranesi"},
   {"postnumer":301,"name":"Akranes","name_dative":"Akranesi"},
   {"postnumer":302,"name":"Akranes","name_dative":"Akranesi"},
