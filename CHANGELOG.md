@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.2.4
+
+_2024-10-09_
+
 - fix: Correct the dative form for "Kjós", "Öræfi" and "Fljót"
 
 ## 1.2.3
