@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.2.3
+
+_2024-10-09_
+
 - fix: Update `postalCodes` and `postalCodeMap` place names
 
 ## 1.2.2
