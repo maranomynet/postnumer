@@ -4,9 +4,9 @@
  * Metadata about the data in your installed version of the "postnumer" package
  */
 export const postnumerMeta = {
-  lastUpdated: "2024-10-09",
+  lastUpdated: "2025-01-08",
   /** @deprecated Typo, use `.lastUpdated` instead (Will be removed in v2.0) */
-  lastUpdtedOn: "2024-10-09",
+  lastUpdtedOn: "2025-01-08",
 };
 
 export const _postalCodes = [
