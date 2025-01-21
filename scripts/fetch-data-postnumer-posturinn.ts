@@ -32,6 +32,8 @@ const postnumerAPIUrl = 'https://api.mobiz.posturinn.is/api/v1/locations/service
  *
  * This is super dumb, but it works for the current póstnúmer places in
  * Iceland.
+ *
+ * TODO: Consider using https://www.npmjs.com/package/beygla instead
  */
 /* prettier-ignore */
 // eslint-disable-next-line complexity
