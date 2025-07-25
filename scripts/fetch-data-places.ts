@@ -65,4 +65,12 @@ export const _thjodskraPlaces = {
 };
 `;
   })
-  .then((moduleSource) => Bun.write('src/_/places-data.ts', moduleSource));
+  .then((moduleSource) => Bun.write('src/_/places-data.ts', moduleSource))
+  .catch((error) => {
+    if (error.code === 'UNABLE_TO_VERIFY_LEAF_SIGNATURE') {
+      console.info(
+        'Hey! You can try running `NODE_TLS_REJECT_UNAUTHORIZED=0  bun run fetch-data` to disable the SSL checking. It is nasty but might be the best thing we have while we do not understand the cause of this error. Ack!'
+      );
+    }
+    throw error;
+  });
