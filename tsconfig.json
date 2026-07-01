@@ -12,7 +12,8 @@
     "strict": true, // Don't be daft. Always be strict.
     "noUncheckedIndexedAccess": true, // Should be part of strict
     "noImplicitAny": true,
-    "useUnknownInCatchVariables": true
+    "useUnknownInCatchVariables": true,
+    "types": ["bun"]
   },
   "exclude": ["node_modules", "_npm-lib"]
 }
