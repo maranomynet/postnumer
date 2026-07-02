@@ -3,7 +3,7 @@
     "lib": ["esnext", "DOM"],
     "allowSyntheticDefaultImports": true,
     "module": "NodeNext",
-    "target": "ES2017",
+    "target": "ES2020",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
