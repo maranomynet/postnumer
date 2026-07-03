@@ -18,6 +18,8 @@ _2026-07-03_
     postal codes that Íslandspóstur may mostly be using internally — i.e. a
     range of of postal codes 121-132 for Reykjavík and then a small selection
     of more rural postal codes ending in "2".
+  - The data includes a spelling error and a single missing real postal code
+    (511) both are patched manually by the script.
 
 ## 1.2.3 – 1.2.4
 
