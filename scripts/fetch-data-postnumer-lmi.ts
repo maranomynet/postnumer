@@ -26,10 +26,22 @@ const postnumerAPIData_partial = v.object({
           v.string(),
           v.transform((name) => name.trim().replace(/\s\s+/g, ' '))
         ),
+        tengidalkur_hagstofan: v.pipe(
+          v.string(),
+          v.transform((name) =>
+            name
+              .trim()
+              .replace(/\s\s+/g, ' ')
+              .replace(/^\d{3} /, '')
+          )
+        ),
       }),
     })
   ),
 });
+
+const createTuple = (postnumer: number, name: string) =>
+  [postnumer, { postnumer, name, name_dative: dativize(name) }] as const;
 
 await fetch(postnumerAPIUrl).then(async (response) => {
   if (!response.ok) {
@@ -41,17 +53,19 @@ await fetch(postnumerAPIUrl).then(async (response) => {
       v
         .parse(postnumerAPIData_partial, data)
         .features.map(({ properties }) => {
-          const postnumer = properties.postnumer;
-          const name = properties.stadur.split(',')[0]!.trim();
-          return [
-            postnumer,
-            {
-              postnumer,
-              name,
-              name_dative: dativize(name),
-            },
-          ] as const;
+          const { postnumer } = properties;
+
+          // let name = properties.stadur.split(',')[0]!.trim();
+          let name = properties.tengidalkur_hagstofan.split(',')[0]!.trim();
+
+          // Spelling mistake fix
+          name = name.replace(/kaupsstaður/, 'kaupstaður');
+
+          return createTuple(postnumer, name);
         })
+        // Add missing postnumer "511 Hólmavík" (not in Byggðastofnun data)
+        // It appears on their map as "531 Hvammstangi" which is incorrect.
+        .concat(createTuple(511, 'Hólmavík'))
         .sort(([a], [b]) => a - b)
     )
   );

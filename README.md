@@ -31,7 +31,7 @@ bun add postnumer
 
 ## Postal Codes
 
-The postal code information isf fetched from an official data-source linked to
+The postal code information is fetched from an official data-source linked to
 from this page: <https://www.byggdastofnun.is/is/postthjonusta/postnumer>
 
 See `postnumerMeta` for information on when your version of the data was last
