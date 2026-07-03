@@ -35,7 +35,7 @@ process.env.TZ = 'Asia/Yangon';
 
 describe('package', () => {
   test('`postnumer` is a simple alias for `postalCodeMap`', () => {
-    // eslint-disable-next-line deprecation/deprecation
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     expect(postnumer).toStrictEqual(postalCodeMap);
   });
 
