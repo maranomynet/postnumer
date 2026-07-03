@@ -3,6 +3,7 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- fix: Syntax fix preventing "511 Hólmavík" being added
 
 ## 1.3.0
 

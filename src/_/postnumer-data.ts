@@ -89,6 +89,7 @@ export const _postalCodes = [
   {"postnumer":471,"name":"Þingeyri","name_dative":"Þingeyri"},
   {"postnumer":500,"name":"Staður","name_dative":"Staði"},
   {"postnumer":510,"name":"Hólmavík","name_dative":"Hólmavík"},
+  {"postnumer":511,"name":"Hólmavík","name_dative":"Hólmavík"},
   {"postnumer":512,"name":"Hólmavík","name_dative":"Hólmavík"},
   {"postnumer":520,"name":"Drangsnes","name_dative":"Drangsnesi"},
   {"postnumer":524,"name":"Árneshreppur","name_dative":"Árneshreppi"},

@@ -24,7 +24,7 @@ const postnumerAPIData_partial = v.object({
         postnumer: v.pipe(v.number(), v.minValue(100), v.maxValue(999)),
         stadur: v.pipe(
           v.string(),
-          v.transform((name) => name.trim().replace(/\s\s+/g, ' '))
+          v.transform((name) => name.trim().replace(/\s\s+/g, ' ')),
         ),
         tengidalkur_hagstofan: v.pipe(
           v.string(),
@@ -32,11 +32,11 @@ const postnumerAPIData_partial = v.object({
             name
               .trim()
               .replace(/\s\s+/g, ' ')
-              .replace(/^\d{3} /, '')
-          )
+              .replace(/^\d{3} /, ''),
+          ),
         ),
       }),
-    })
+    }),
   ),
 });
 
@@ -65,9 +65,9 @@ await fetch(postnumerAPIUrl).then(async (response) => {
         })
         // Add missing postnumer "511 Hólmavík" (not in Byggðastofnun data)
         // It appears on their map as "531 Hvammstangi" which is incorrect.
-        .concat(createTuple(511, 'Hólmavík'))
-        .sort(([a], [b]) => a - b)
-    )
+        .concat([createTuple(511, 'Hólmavík')])
+        .sort(([a], [b]) => a - b),
+    ),
   );
 
   const date = new Date().toISOString().split('T')[0];
@@ -92,6 +92,6 @@ export const _postalCodes = [
 export const _postalCodeMap = /*#__PURE__*/ Object.fromEntries(
   _postalCodes.map((obj) => [obj.postnumer, obj])
 );
-`
+`,
   );
 });
