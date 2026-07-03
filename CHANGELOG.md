@@ -3,6 +3,16 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- feat: Switch to use Byggðastofnun/LMÍ as a source for `postalCodes` data —
+  as Íslandspóstur has removed data from their website and don't seem
+  concerned with exposing any authoritative info on the postal codes they're
+  working with.  
+  The switch results in the following changes to the data:
+  - Some place names are more correct/specific. This is good.
+  - Several postal codes disappear but these seem to be more "esorteric"
+    postal codes that Íslandspóstur may mostly be using internally — i.e. a
+    range of of postal codes 121-132 for Reykjavík and then a small selection
+    of more rural postal codes ending in "2".
 
 ## 1.2.3 – 1.2.4
 
