@@ -3,6 +3,11 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+
+## 1.3.0
+
+_2026-07-03_
+
 - feat: Switch to use Byggðastofnun/LMÍ as a source for `postalCodes` data —
   as Íslandspóstur has removed data from their website and don't seem
   concerned with exposing any authoritative info on the postal codes they're
