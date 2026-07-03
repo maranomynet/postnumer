@@ -4,13 +4,7 @@
 
 - ... <!-- Add new lines here. -->
 
-## 1.3.1
-
-_2026-07-03_
-
-- fix: Syntax fix preventing "511 Hólmavík" being added
-
-## 1.3.0
+## 1.3.0 – 1.3.1
 
 _2026-07-03_
 
