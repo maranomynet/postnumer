@@ -15,9 +15,9 @@ const postnumerSvaediPage =
 // resulting postcodes that aren't found in the API data above.
 // FML! LOL!
 
-// NOTE: To properly scrape the data from the page, we'c need to use something
-// like happyDÓM, but laziness makes dumb RegExp faffing more appealing.
-// Going with that until it doesn't work anymore.
+// NOTE: The content in `postnumerSvaediPAge` seems to be manually typed in
+// and the resulting data has errors and omissions, making it pretty much
+// unusable.
 
 // ---------------------------------------------------------------------------
 
