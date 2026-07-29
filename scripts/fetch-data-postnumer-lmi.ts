@@ -13,6 +13,15 @@ import { dativize } from './postnumer-utils.js';
 const postnumerAPIUrl =
   'https://gis.lmi.is/geoserver/byggdastofnun/wfs?request=GetFeature&service=WFS&version=1.1.0&typeName=byggdastofnun:postnumer&outputFormat=application%2Fjson';
 
+// Source: https://posturinn.is/einstaklingar/ymsar-upplysingar/postnumer-og-thjonustustig
+// ...fetches its data from this API endpoint:
+const posturinnPostnumerAPIUrl =
+  'https://api.mobiz.posturinn.is/api/v1/locations/servicelevel';
+// As of early summer 2026 the city values now represent the "Servicing post office"
+// not the town/locality the postcode represents.
+// We can still use it to find "pósthólf" codes, but the town/locality names must
+// be derived/guessed from the nearest Byggðastofnun póstnúmer above.
+
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------
@@ -40,14 +49,44 @@ const postnumerAPIData_partial = v.object({
   ),
 });
 
-const createTuple = (postnumer: number, name: string) =>
-  [postnumer, { postnumer, name, name_dative: dativize(name) }] as const;
+const postholfNumbers = await fetch(posturinnPostnumerAPIUrl).then(async (response) => {
+  if (!response.ok) {
+    throw new Error(
+      `Failed to fetch Pósturinn's postnumer API data: ${response.statusText}`,
+    );
+  }
+  const data = await response.json();
+  return v
+    .parse(
+      v.array(
+        v.object({
+          postcode: v.pipe(v.number(), v.minValue(100), v.maxValue(999)),
+          postoffice: v.pipe(
+            v.string(),
+            v.transform((name) => name.trim().replace(/\s\s+/g, ' ')),
+          ),
+        }),
+      ),
+      data,
+    )
+    .filter(({ postoffice }) => /pósthólf/i.test(postoffice))
+    .map(({ postcode }) => postcode);
+});
+
+const createTuple = (postnumer: number, name: string, postbox?: true) =>
+  [
+    postnumer,
+    { postnumer, name, name_dative: dativize(name), ...(postbox && { postholf: true }) },
+  ] as const;
+
+type PostHolfObj = NonNullable<ReturnType<typeof createTuple>[1]>;
 
 await fetch(postnumerAPIUrl).then(async (response) => {
   if (!response.ok) {
-    throw new Error(`Failed to fetch postnumer data: ${response.statusText}`);
+    throw new Error(`Failed to fetch LMÍ's postnumer data: ${response.statusText}`);
   }
   const data = await response.json();
+  let _lastNonPostholfObj: ReturnType<typeof createTuple>[1] | undefined;
   const postnumer = Object.values(
     Object.fromEntries(
       v
@@ -66,7 +105,32 @@ await fetch(postnumerAPIUrl).then(async (response) => {
         // Add missing postnumer "511 Hólmavík" (not in Byggðastofnun data)
         // It appears on their map as "531 Hvammstangi" which is incorrect.
         .concat([createTuple(511, 'Hólmavík')])
-        .sort(([a], [b]) => a - b),
+        .concat(postholfNumbers.map((postnumer) => createTuple(postnumer, '', true)))
+        .sort(([a], [b]) => a - b)
+        .map((tuple, i, arr) => {
+          const [pnr, obj] = tuple;
+          if (i === 0 || !obj.postholf) {
+            return tuple;
+          }
+          // If this is a "pósthólf" code, try to find the nearest non-pósthólf code
+          // and use its name instead of the empty string.
+          let lastObj = arr[i - 1]![1];
+          if (lastObj.name === 'Kjalarnes') {
+            // Special case: "Kjalarnes" comes between "Reykjavík" and its pósthólf codes.
+            lastObj = arr[i - 2]![1];
+          }
+          if (lastObj.postholf) {
+            if (!_lastNonPostholfObj) {
+              throw new Error(
+                `Failed to find a non-pósthólf code for pósthólf ${pnr} at index ${i}`,
+              );
+            }
+            lastObj = _lastNonPostholfObj;
+          }
+          _lastNonPostholfObj = lastObj;
+          const { name, name_dative } = _lastNonPostholfObj;
+          return [pnr, { ...obj, name, name_dative }];
+        }),
     ),
   );
 

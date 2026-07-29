@@ -62,6 +62,7 @@ const lastItem = postalCodes[postalCodesArr.length - 1];
 lastItem.postcode; // 902
 lastItem.name; // 'Vestmannaeyjar'
 lastItem.name_dative; // 'Vestmannaeyjum'
+lastItem.postholf; // false
 ```
 
 ---
@@ -80,6 +81,7 @@ const info = postalCodeMap[200];
 info.postcode; // 200
 info.name; // 'Kópavogur'
 info.name_dative; // 'Kópavogi'
+info.postholf; // false
 ```
 
 ---

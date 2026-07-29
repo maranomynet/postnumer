@@ -3,6 +3,9 @@
 ## Upcoming...
 
 - ... <!-- Add new lines here. -->
+- feat: Add back "Pósthólf" postal codes (missing from the LMÍ data) — marking
+  them with a `postholf` boolean property for easier down-stream filtering.
+- feat: Postal code `815` changes from `Þorlákshöfn` to`Ölfus`
 
 ## 1.3.0 – 1.3.1
 
