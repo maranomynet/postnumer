@@ -119,9 +119,13 @@ religious affiliation, etc. This module considers those codes out of scope.
 
 ## Contributing
 
-Because the (shameful) lack of public APIs, the data exported by this module
-has to be manually updated. Find detailed step-by-step directions at the top
-of [postnumer.mjs](./postnumer.mjs) and [places.mjs](./places.mjs).
+Because the (shameful) lack of neat public APIs, the data exported by this
+module has to be manually updated by periodically running a script
+(`bun run fetch-data`) which fetches fresh data, cleans up, merges and
+corrects the resulting data.
+
+Every time a data change is detected, a new version of the module is published
+to npm.
 
 Pull requests welcome, and please open an issue if you have ideas for new
 features or improvements.
